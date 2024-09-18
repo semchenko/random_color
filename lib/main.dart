@@ -24,7 +24,7 @@ class _ChangeableColorsState extends State<ChangeableColors> {
 
   @override
   void initState() {
-    _setNewLook();
+    _changeColor();
     super.initState();
   }
 
@@ -33,7 +33,7 @@ class _ChangeableColorsState extends State<ChangeableColors> {
     return Directionality(
       textDirection: TextDirection.ltr,
       child: GestureDetector(
-        onTap: _setNewLook,
+        onTap: _changeColor,
         child: ColoredBox(
           color: _backgroundColor,
           child: Center(
@@ -60,7 +60,7 @@ class _ChangeableColorsState extends State<ChangeableColors> {
     );
   }
 
-  void _setNewLook() {
+  void _changeColor() {
     setState(() {
       _backgroundColor = _getRandomColor();
       _messageColor = _getRandomColor();
